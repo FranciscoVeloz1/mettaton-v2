@@ -1,0 +1,36 @@
+void main()
+{
+  Controller controller = new Controller(1, 2)
+  Motor motor = new Motor(3)
+  Bumper bumper = new Bumper(4)
+
+  while(true)
+  {
+    if(controller == "A")
+    {
+      motor.spin(forward, 127)
+    }
+
+    else if (controller == "B")
+    {
+      motor.spin(backward, 127)
+    }
+
+    else 
+    {
+      motor.stop()
+    }
+
+    if (bumper.pressing())
+    {
+      motor.spin(forward, 127)
+      wait(1000)
+
+      motor.spin(backward, 127)
+      wait(1000)
+
+      motor.stop()
+      wait(100)
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "compiler",
+  "version": "1.0.0",
+  "description": "Compiling mettaton programming language to arduino",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "mettaton": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "tsnd --respawn src/index.ts",
+    "mettaton": "npm run build && npm run start mettaton"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^10.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  }
+}
