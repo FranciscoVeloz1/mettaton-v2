@@ -1,5 +1,7 @@
 import fs from "fs/promises";
 
+import { lexicon } from "./lexicon";
+
 export const readFile = async (file: string) => {
   try {
     const split = file.split(".");
@@ -8,8 +10,7 @@ export const readFile = async (file: string) => {
 
     const data = await fs.readFile(file, "utf8");
     const splitted = data.split(/[\n]+/);
-    console.log(splitted.forEach((s, i) => console.log(`Line ${i}`, s)));
-    // console.log(data);
+    lexicon(splitted);
   } catch (error) {
     if (error instanceof Error) console.error(error.message);
   }
