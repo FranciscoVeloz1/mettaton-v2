@@ -1,40 +1,64 @@
-import { IRegex } from "../interfaces/IRegex";
+import { IRegex } from '../interfaces/IRegex'
 
 export const regularExpresions: IRegex[] = [
   {
-    title: "main",
-    regex: /^void main+[(\w*\s*)]+$/i,
+    title: 'main',
+    regex: /^void main+[(\w*\s*)]+$/i
   },
   {
-    title: "start key",
-    regex: /^\s*{+$/i,
+    title: 'start key',
+    regex: /^\s*{+$/i
   },
   {
-    title: "end key",
-    regex: /^\s*}+$/i,
+    title: 'end key',
+    regex: /^\s*}+$/i
   },
   {
-    title: "comment",
-    regex: /^\s*[//]\w*/i,
+    title: 'comment',
+    regex: /^\s*[//]\w*/i
   },
   {
-    title: "if",
-    regex: /^\s*if[(\w*)]+$/,
+    title: 'instance',
+    regex: /(\w+)\s+(\w+)\s*=\s*new\s+\w+\(([^)]+)\)/
   },
   {
-    title: "else",
-    regex: /^\s*else+$/,
+    title: 'variable',
+    regex: /(\w+)\s+(\w+)\s*=\s*(.*)/
   },
   {
-    title: "time",
-    regex: /^\s*wait[(\w*)]+$/,
+    title: 'else if',
+    regex: /\belse if\s*\([^)]+\)/
   },
   {
-    title: "comparison",
-    regex: /^[(]\w*\s*c|<|>|==|!=|<=\s*\w*[)]+$/i,
+    title: 'if',
+    regex: /\bif\s*\([^)]+\)/
   },
   {
-    title: "unknown",
-    regex: /./g,
+    title: 'else',
+    regex: /^\s*else+$/
   },
-];
+  {
+    title: 'while',
+    regex: /^\s*while\s*[(\w*)]+$/
+  },
+  {
+    title: 'active function',
+    regex: /(\w+)\.(\w+)\(([^)]*)\)/
+  },
+  {
+    title: 'time',
+    regex: /^\s*wait[(\w*)]+$/
+  },
+  {
+    title: 'comparison',
+    regex: /^[(]\w*\s*c|<|>|==|!=|<=\s*\w*[)]+$/i
+  },
+  {
+    title: 'empty',
+    regex: /^\s*$/
+  },
+  {
+    title: 'unknown',
+    regex: /./g
+  }
+]

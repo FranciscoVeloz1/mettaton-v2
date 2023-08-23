@@ -1,20 +1,24 @@
 //Comment example
 void main()
 {
-  Controller controller = new Controller(1, 2)
+  Controller control = new Controller(1, 2)
   Motor motor = new Motor(3)
   Bumper bumper = new Bumper(4)
 
+  int speed = 127
+  string text = "hello world"
+  bool state = bumper.pressing()
+
   while(true)
   {
-    if(controller == "A")
+    if(control == "A")
     {
-      motor.spin(forward, 127)
+      motor.spin(forward, speed)
     }
 
-    else if (controller == "B")
+    else if (control == "B")
     {
-      motor.spin(backward, 127)
+      motor.spin(backward, speed)
     }
 
     else 
@@ -24,10 +28,10 @@ void main()
 
     if (bumper.pressing())
     {
-      motor.spin(forward, 127)
+      motor.spin(forward, speed)
       wait(1000)
 
-      motor.spin(backward, 127)
+      motor.spin(backward, speed)
       wait(1000)
 
       motor.stop()
